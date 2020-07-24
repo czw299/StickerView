@@ -1,0 +1,3 @@
+include ':stickerview'
+include ':app'
+rootProject.name = "StickerViewDemo"

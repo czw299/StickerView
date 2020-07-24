@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StickerViewDemo</string>
+    <string name="pic_sticker">图片贴纸</string>
+    <string name="text_sticker">文字贴纸</string>
+    <string name="demo_text">演示文本</string>
+</resources>

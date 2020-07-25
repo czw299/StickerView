@@ -28,20 +28,12 @@ public class StickerManager {
         return mStickerList;
     }
 
-    /**
-     * 移除指定贴纸
-     *
-     * @param picSticker
-     */
     public void removeSticker(PicSticker picSticker) {
         picSticker.clear();
         mStickerList.remove(picSticker);
 
     }
 
-    /**
-     * 移除所有贴纸
-     */
     public void removeAllSticker() {
         for (int i = 0; i < mStickerList.size(); i++) {
             mStickerList.get(i).clear();
@@ -49,11 +41,6 @@ public class StickerManager {
         mStickerList.clear();
     }
 
-    /**
-     * 设置当前贴纸为焦点贴纸
-     *
-     * @param focusSticker
-     */
     public void setFocusSticker(BaseSticker focusSticker) {
         for (int i = 0; i < mStickerList.size(); i++) {
             BaseSticker sticker = mStickerList.get(i);
@@ -65,9 +52,6 @@ public class StickerManager {
         }
     }
 
-    /**
-     * 清除所有焦点
-     */
     public void clearAllFocus() {
         for (int i = 0; i < mStickerList.size(); i++) {
             BaseSticker sticker = mStickerList.get(i);
@@ -75,13 +59,6 @@ public class StickerManager {
         }
     }
 
-    /**
-     * 根据触摸坐标返回当前触摸的贴纸
-     *
-     * @param x
-     * @param y
-     * @return
-     */
     public BaseSticker getSticker(float x, float y) {
         for (int i = mStickerList.size() - 1; i >= 0; i--) {
             BaseSticker sticker = mStickerList.get(i);

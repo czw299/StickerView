@@ -11,11 +11,11 @@ import android.graphics.RectF;
 
 public class PicSticker extends BaseSticker {
 
-    private Bitmap mStickerBitmap;//贴纸图像
-    private Matrix mMatrix;//维护图像变化的矩阵
+    private Bitmap mStickerBitmap;
+    private Matrix mMatrix;
 
-    private float[] mSrcPoints;//矩阵变换前的点坐标
-    private float[] mDstPoints;//矩阵变换后的点坐标
+    private float[] mSrcPoints;
+    private float[] mDstPoints;
 
     public PicSticker(Context context, Bitmap bitmap) {
         super();
@@ -24,11 +24,11 @@ public class PicSticker extends BaseSticker {
         MidPointF = new PointF();
 
         mSrcPoints = new float[]{
-                0, 0,//左上
-                bitmap.getWidth(), 0,//右上
-                bitmap.getWidth(), bitmap.getHeight(),//右下
-                0, bitmap.getHeight(),//左下
-                bitmap.getWidth() / 2f, bitmap.getHeight() / 2f//中间点
+                0, 0,
+                bitmap.getWidth(), 0,
+                bitmap.getWidth(), bitmap.getHeight(),
+                0, bitmap.getHeight(),
+                bitmap.getWidth() / 2f, bitmap.getHeight() / 2f
         };
         mDstPoints = mSrcPoints.clone();
         mStickerBound = new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
@@ -58,57 +58,41 @@ public class PicSticker extends BaseSticker {
         Matrix matrix = new Matrix();
         getMatrix().invert(matrix);
         matrix.mapPoints(dstPoints, srcPoints);
-        if (getStickerBound().contains(dstPoints[0], dstPoints[1])) {//RectF应该是去除matrix变化之前的RectF
+        if (getStickerBound().contains(dstPoints[0], dstPoints[1])) {
             return true;
         }else {
             return false;
         }
     }
 
-    /**
-     * 平移操作
-     */
     @Override
     public void translate(float dx, float dy) {
         mMatrix.postTranslate(dx, dy);
         updatePoints();
     }
 
-    /**
-     * 缩放操作
-     */
     @Override
     public void scale(float sx, float sy) {
         mMatrix.postScale(sx, sy, MidPointF.x, MidPointF.y);
         updatePoints();
     }
 
-    /**
-     * 旋转操作
-     */
     @Override
     public void rotate(float degrees) {
         mMatrix.postRotate(degrees, MidPointF.x, MidPointF.y);
         updatePoints();
     }
 
-    /**
-     * 当矩阵发生变化的时候，更新坐标点（src坐标点经过matrix映射变成了dst坐标点）
-     */
     private void updatePoints() {
-        //更新贴纸点坐标
         mMatrix.mapPoints(mDstPoints, mSrcPoints);
-        //更新贴纸中心点坐标
         MidPointF.set(mDstPoints[8], mDstPoints[9]);
     }
 
     @Override
     public void onDraw(Canvas canvas, Paint paint) {
-        //绘制贴纸
         paint.setColor(Color.BLUE);
         canvas.drawBitmap(mStickerBitmap, mMatrix, paint);
         if (isFocus) {
-            //绘制贴纸边框
             canvas.drawLine(mDstPoints[0], mDstPoints[1], mDstPoints[2], mDstPoints[3], paint);
             canvas.drawLine(mDstPoints[2], mDstPoints[3], mDstPoints[4], mDstPoints[5], paint);
             canvas.drawLine(mDstPoints[4], mDstPoints[5], mDstPoints[6], mDstPoints[7], paint);

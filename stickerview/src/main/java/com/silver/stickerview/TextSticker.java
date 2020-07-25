@@ -27,7 +27,7 @@ public class TextSticker extends BaseSticker {
         float width = mStickerBound.right - mStickerBound.left;
         float height = mStickerBound.bottom - mStickerBound.top;
         MidPointF = new PointF(width / 2, height / 2);
-        BottomRightF = new PointF(width, height);   //保存这两个点的坐标
+        BottomRightF = new PointF(width, height);
     }
 
     @Override
@@ -153,6 +153,6 @@ public class TextSticker extends BaseSticker {
 
         float width = mStickerBound.right - mStickerBound.left;
         float height = mStickerBound.bottom - mStickerBound.top;
-        BottomRightF = new PointF(MidPointF.x + width / 2 , MidPointF.y + height / 2);   //保存这两个点的坐标
+        BottomRightF = new PointF(MidPointF.x + width / 2 , MidPointF.y + height / 2);
     }
 }

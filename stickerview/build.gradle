@@ -29,7 +29,7 @@ publish {
     artifactId = 'stickerview'
     publishVersion = '1.0.0'
     desc = 'An Android StickerView'
-    website = 'https://github.com/czw299/FFPicker'
+    website = 'https://github.com/czw299/StickerViewDemo'
 }
 
 dependencies {

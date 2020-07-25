@@ -70,12 +70,12 @@ public class StickerLayout extends View implements View.OnTouchListener {
 
     public void addSticker(BaseSticker sticker) {
         int size = StickerManager.getInstance().getStickerList().size();
-        if (size < 9) {
+        if (size < 5) {
             StickerManager.getInstance().addSticker(sticker);
             StickerManager.getInstance().setFocusSticker(sticker);
             invalidate();
         } else {
-            Toast.makeText(mContext, "A maximum of 9 stickers can be added", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "A maximum of 5 stickers can be added", Toast.LENGTH_SHORT).show();
         }
     }
 

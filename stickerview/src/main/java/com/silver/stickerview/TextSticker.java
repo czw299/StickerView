@@ -78,13 +78,17 @@ public class TextSticker extends BaseSticker {
         return false;
     }
 
+    public Paint getPaint(){
+        return paint;
+    }
+
     @Override
     public void onDraw(Canvas canvas, Paint paint) {
         Paint.FontMetrics fontMetrics=this.paint.getFontMetrics();
         float distance=(fontMetrics.bottom - fontMetrics.top)/2 - fontMetrics.bottom;
         canvas.drawText(text, MidPointF.x, MidPointF.y + distance, this.paint);
         if (isFocus) {
-            paint.setColor(Color.BLUE);
+            paint.setColor(Color.YELLOW);
             float width = mStickerBound.right - mStickerBound.left;
             float height = mStickerBound.bottom - mStickerBound.top;
             canvas.drawLine(MidPointF.x - width / 2,

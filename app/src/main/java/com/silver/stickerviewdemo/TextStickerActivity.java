@@ -1,6 +1,5 @@
 package com.silver.stickerviewdemo;
 
-import android.graphics.Paint;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;

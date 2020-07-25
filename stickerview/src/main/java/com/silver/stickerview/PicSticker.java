@@ -90,7 +90,7 @@ public class PicSticker extends BaseSticker {
 
     @Override
     public void onDraw(Canvas canvas, Paint paint) {
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.YELLOW);
         canvas.drawBitmap(mStickerBitmap, mMatrix, paint);
         if (isFocus) {
             canvas.drawLine(mDstPoints[0], mDstPoints[1], mDstPoints[2], mDstPoints[3], paint);

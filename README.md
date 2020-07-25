@@ -30,7 +30,7 @@ mStickerLayout.addSticker(mSticker);
 ```
 ```java
 StickerLayout mStickerLayout = findViewById(R.id.pic_sticker_layout);
-PicSticker mSticker = new PicSticker(context, drawableToBitmap(getResources().getDrawable(R.drawable.demosticker)));
+PicSticker mSticker = new PicSticker(context, bitmap);
 mStickerLayout.addSticker(mSticker);
 ```
 ## License

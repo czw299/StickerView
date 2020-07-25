@@ -39,9 +39,6 @@ public class TextSticker extends BaseSticker {
     }
 
     public void translateTo(float dx, float dy){//绝对移动
-        //MidPointF.x = dx;
-        //MidPointF.y = dy;
-
         float width = mStickerBound.right - mStickerBound.left;
         float height = mStickerBound.bottom - mStickerBound.top;
         MidPointF.x = dx - width / 2;

@@ -1,5 +1,6 @@
 package com.silver.stickerviewdemo;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ public class TextStickerActivity extends AppCompatActivity {
         mStickerLayout = findViewById(R.id.text_sticker_layout);
         mSticker = new TextSticker(getResources().getString(R.string.demo_text));
         mSticker.setTextSize(50f);
+        mSticker.getPaint().setColor(Color.WHITE);
         mStickerLayout.addSticker(mSticker);
         mSticker.translateTo(250,150);
     }

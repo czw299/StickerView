@@ -11,12 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.silver.stickerview.PicSticker;
-import com.silver.stickerview.StickerLayout;
+import com.silver.stickerview.StickerView;
 
 public class PicStickerActivity extends AppCompatActivity {
 
     private Context context;
-    private StickerLayout mStickerLayout;
+    private StickerView mStickerView;
     private PicSticker mSticker;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,9 +27,9 @@ public class PicStickerActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        mStickerLayout = findViewById(R.id.pic_sticker_layout);
+        mStickerView = findViewById(R.id.pic_sticker_layout);
         mSticker = new PicSticker(context, drawableToBitmap(getResources().getDrawable(R.drawable.demosticker)));
-        mStickerLayout.addSticker(mSticker);
+        mStickerView.addSticker(mSticker);
     }
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
@@ -44,6 +44,6 @@ public class PicStickerActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mStickerLayout.removeAllSticker();
+        mStickerView.removeAllSticker();
     }
 }

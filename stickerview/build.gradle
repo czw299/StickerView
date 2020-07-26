@@ -27,9 +27,9 @@ publish {
     userOrg = 'czw299'
     groupId = 'com.silver'
     artifactId = 'stickerview'
-    publishVersion = '1.0.2'
+    publishVersion = '1.0.3'
     desc = 'An Android StickerView'
-    website = 'https://github.com/czw299/StickerViewDemo'
+    website = 'https://github.com/czw299/StickerView'
 }
 
 dependencies {

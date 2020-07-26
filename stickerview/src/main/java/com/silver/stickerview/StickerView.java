@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class StickerLayout extends View implements View.OnTouchListener {
+public class StickerView extends View implements View.OnTouchListener {
 
     private Context mContext;
     private Paint mPaint;
@@ -33,17 +33,17 @@ public class StickerLayout extends View implements View.OnTouchListener {
     private PointF mFirstPoint = new PointF();
     private PointF mSecondPoint = new PointF();
 
-    public StickerLayout(Context context) {
+    public StickerView(Context context) {
         super(context);
         init(context);
     }
 
-    public StickerLayout(Context context, AttributeSet attrs) {
+    public StickerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public StickerLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public StickerView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.silver:stickerview:1.0.2'
+    implementation 'com.silver:stickerview:1.0.3'
 }
 ```
 您可以在XML中创建视图

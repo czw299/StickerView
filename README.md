@@ -16,22 +16,22 @@ dependencies {
 ```
 您可以在XML中创建视图
 ```
-<com.silver.stickerview.StickerLayout
-        android:id="@+id/pic_sticker_layout"
+<com.silver.stickerview.StickerView
+        android:id="@+id/stickerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 ```
 再在代码中添加贴纸
 ```java
-StickerLayout mStickerLayout = findViewById(R.id.text_sticker_layout);
+StickerView mStickerView = findViewById(R.id.stickerview);
 TextSticker mSticker = new TextSticker(getResources().getString(R.string.demo_text));
 mSticker.setTextSize(50f);
-mStickerLayout.addSticker(mSticker);
+mStickerView.addSticker(mSticker);
 ```
 ```java
-StickerLayout mStickerLayout = findViewById(R.id.pic_sticker_layout);
+StickerView mStickerLayout = findViewById(R.id.stickerview);
 PicSticker mSticker = new PicSticker(context, bitmap);
-mStickerLayout.addSticker(mSticker);
+mStickerView.addSticker(mSticker);
 ```
 ## License
 

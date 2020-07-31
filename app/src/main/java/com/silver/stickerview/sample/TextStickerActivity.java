@@ -1,4 +1,4 @@
-package com.silver.stickerviewdemo;
+package com.silver.stickerview.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;

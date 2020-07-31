@@ -1,4 +1,4 @@
-package com.silver.stickerviewdemo;
+package com.silver.stickerview.sample;
 
 import android.content.Context;
 import android.graphics.Bitmap;

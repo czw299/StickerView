@@ -5,13 +5,12 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.silver.stickerviewdemo"
+        applicationId "com.silver.stickerview.sample"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
